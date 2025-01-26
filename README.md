@@ -51,19 +51,5 @@ LAB ASSIGNMENT 3
 ## Results and Interpretation
 - **Cohen's Kappa Score (NLP)**: 0.8011, indicating *very good agreement*.
 - **Fleiss' Kappa Score (CV)**: 0.7222, indicating *substantial agreement*.
-
-## Tools Used
-- **Annotation Tool**: Label Studio (as shown in the sample images provided)
-- **Programming Language**: Python
-- **Libraries**: pandas, sklearn, statsmodels
-
-## Outputs
-- Annotated data exported in CSV format.
-- Agreement scores calculated and interpreted.
-
-## Instructions to Run
-1. Open the Jupyter notebooks `question3-cv.ipynb` and `question3-nlp.ipynb`.
-2. Run the code cells to calculate the inter-annotator agreement metrics.
-3. Review the output agreement scores and their significance.
-
+  
 ---
