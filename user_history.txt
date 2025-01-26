@@ -1,0 +1,71 @@
+    1  history
+    2  sudo apt list | grep -i python3.10
+    3  # Create dirs and download Python
+    4  mkdir -p ~/pythonbuild && cd ~/pythonbuild
+    5  wget https://www.python.org/ftp/python/3.10.16/Python-3.10.16.tgz
+    6  tar -xzf Python-3.10.16.tgz
+    7  cd Python-3.10.16
+    8  # Configure and install to home directory
+    9  ./configure --enable-optimizations --prefix=$HOME/.local
+   10  make -j$(nproc)
+   11  make install
+   12  # Add to PATH (append to ~/.bashrc)
+   13  echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+   14  source ~/.bashrc
+   15  # Cleanup
+   16  cd ~
+   17  rm -rf ~/pythonbuild
+   18  # Verify installation
+   19  python3 --version
+   20  # Create installation directories
+   21  mkdir -p ~/pythonbuild ~/opt/python3.10.16
+   22  cd ~/pythonbuild
+   23  # Download with SSL certificate workaround
+   24  wget --no-check-certificate https://www.python.org/ftp/python/3.10.16/Python-3.10.16.tgz
+   25  # Extract source
+   26  tar xzf Python-3.10.16.tgz
+   27  cd Python-3.10.16
+   28  # Build dependencies check
+   29  command -v make >/dev/null 2>&1 || { echo "Please install build-essential"; exit 1; }
+   30  command -v gcc >/dev/null 2>&1 || { echo "Please install gcc"; exit 1; }
+   31  # Configure and build
+   32  ./configure --prefix=$HOME/opt/python3.10.16     --enable-optimizations     --with-ensurepip=install
+   33  make -j$(nproc)
+   34  make install
+   35  # Add to PATH
+   36  echo 'export PATH=$HOME/opt/python3.10.16/bin:$PATH' >> ~/.bashrc
+   37  export PATH=$HOME/opt/python3.10.16/bin:$PATH
+   38  python3 --version
+   39  # Create and enter project directory
+   40  mkdir ~/labelstudio_project
+   41  cd ~/labelstudio_project
+   42  # Create virtual environment
+   43  python3.10 -m venv venv
+   44  # Activate virtual environment (Windows)
+   45  .\venv\Scripts\activate
+   46  # Update pip
+   47  python -m pip install --upgrade pip
+   48  # Install label studio
+   49  pip install label-studio
+   50  # Get absolute path to Python 3.10
+   51  PYTHON_PATH=$HOME/opt/python3.10.16/bin/python3
+   52  # Create project directory
+   53  mkdir -p ~/labelstudio_project
+   54  cd ~/labelstudio_project
+   55  # Create virtual environment with specific Python
+   56  $PYTHON_PATH -m venv .venv
+   57  # Source the virtual environment (Linux/Mac)
+   58  source .venv/bin/activate
+   59  # Ensure pip is installed in venv
+   60  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   61  $PYTHON_PATH get-pip.py --user
+   62  # Install label studio
+   63  $HOME/.local/bin/pip install --user label-studio
+   64  # Add to PATH in bashrc if not already there
+   65  echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+   66  source ~/.bashrc
+   67  # Check installations
+   68  which pip
+   69  pip --version
+   70  label-studio --version
+   71  history > user_history.txt
