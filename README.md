@@ -4,7 +4,7 @@
 ```
 LAB ASSIGNMENT 3
 │-- CV-annotations
-│   │-- CV-annotations-3rd-member.csv
+│   │-- CV-annotations-3rd_member.csv
 │   │-- CV-annotations-Arjun.csv
 │   │-- CV-annotations-Venkat.csv
 │-- imgs
@@ -16,13 +16,19 @@ LAB ASSIGNMENT 3
 │-- annotating-text.png
 │-- question3-cv.ipynb
 │-- question3-nlp.ipynb
+│-- ScreenshotsTask1.pdf
+│-- Lab3_STTAI_task1.pdf
 ```
+
+## Directory Overview
 
 - **CV-annotations/**: Contains annotation CSV files for the Computer Vision task.
 - **imgs/**: Contains 20 images used for the truck/no-truck classification task.
 - **NLP-annotations/**: Contains annotation CSV files for the NLP task.
 - **annotating-images.png / annotating-text.png**: Sample images showing annotations using Label Studio.
 - **question3-cv.ipynb / question3-nlp.ipynb**: Jupyter notebooks for analysis and evaluation.
+- **ScreenshotsTask1.pdf**: Contains screenshots of the commands executed for Task 1.
+- **Lab3_STTAI_task1.pdf**: Documentation of Task 1.
 
 ## Annotation Process
 
@@ -49,7 +55,7 @@ LAB ASSIGNMENT 3
 - The third annotation was obtained from another team to compute the metric.
 
 ## Results and Interpretation
+
 - **Cohen's Kappa Score (NLP)**: 0.8011, indicating *very good agreement*.
 - **Fleiss' Kappa Score (CV)**: 0.7222, indicating *substantial agreement*.
-  
----
+
