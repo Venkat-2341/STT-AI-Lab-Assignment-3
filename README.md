@@ -1,8 +1,5 @@
 # Lab Assignment 3
 
-## Overview
-This assignment focuses on annotating NLP and Computer Vision (CV) datasets, evaluating inter-annotator agreement using statistical measures, and performing classification tasks.
-
 ## Project Structure
 ```
 LAB ASSIGNMENT 3
